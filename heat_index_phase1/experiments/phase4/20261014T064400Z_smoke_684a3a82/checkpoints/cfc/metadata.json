@@ -1,0 +1,175 @@
+{
+  "features": [
+    "temperature_C",
+    "humidity_percent",
+    "dew_point_C",
+    "B08_mean_K",
+    "B13_mean_K",
+    "B14_mean_K",
+    "B15_mean_K"
+  ],
+  "sequence_length": 6,
+  "forecast_horizon_hours": 1,
+  "output_units": "\u00b0C",
+  "input_time_unit": "hour",
+  "dataset_fingerprint": "e8092a7f480b9c7f92e715dd9e421d5b0b820651a813c91cc350ef55de2859ef",
+  "source_manifest": {
+    "dataset_fingerprint": "e8092a7f480b9c7f92e715dd9e421d5b0b820651a813c91cc350ef55de2859ef",
+    "sources": [
+      {
+        "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\mariveles_hourly\\himawari_mariveles_hourly.csv",
+        "sha256": "53f84ad11e27f831aa8ccd427b7532cc1d2ede0a588b934526fe1d41d10c5396"
+      },
+      {
+        "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\open_meteo_clean.csv",
+        "sha256": "c64411f79654f342df620b6d95ec05c47cc4c46b26c7f5e6c49fd70981dbc06f"
+      }
+    ],
+    "provenance": {
+      "satellite": "Himawari-9 AHI; existing Satpy extraction, fixed 20x20 pixel crop; spatial registration not independently validated",
+      "weather": "Open-Meteo historical gridded export; exact model and issue-time availability not recorded",
+      "naive_timezone": "UTC (raw weather export GMT, offset 0; AHI filename timestamps interpreted as UTC)",
+      "operational_availability": "unverified; retrospective timestamps are valid times, not publication times"
+    },
+    "timezone": "UTC",
+    "units": {
+      "B08_mean_K": "K",
+      "B13_mean_K": "K",
+      "B14_mean_K": "K",
+      "B15_mean_K": "K",
+      "temperature_C": "\u00b0C",
+      "dew_point_C": "\u00b0C",
+      "humidity_percent": "%",
+      "heat_index_C": "\u00b0C",
+      "target_heat_index_1h_C": "\u00b0C"
+    },
+    "satellite_rows": 262,
+    "weather_rows": 49680,
+    "aligned_rows": 262,
+    "satellite_without_weather_timestamp": 0,
+    "invalid_feature_rows": 0,
+    "valid_one_hour_targets": 259,
+    "interpolation": "none",
+    "operational_availability_verified": false
+  },
+  "training_config": {
+    "sequence_length": 6,
+    "forecast_horizon_hours": 1,
+    "models": [
+      "mlp",
+      "ltc",
+      "cfc"
+    ],
+    "hidden_size": 12,
+    "ode_unfolds": 6,
+    "epochs": 8,
+    "patience": 3,
+    "min_delta": 0.0001,
+    "learning_rate": 0.003,
+    "batch_size": 32,
+    "gradient_clip": 1.0,
+    "seed": 42,
+    "device": "cpu",
+    "threads": 1,
+    "split": {
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15
+    },
+    "minimum": {
+      "train_samples": 500,
+      "validation_samples": 168,
+      "test_samples": 168,
+      "coverage_days": 30
+    },
+    "data": {
+      "satellite_csvs": [
+        "mariveles_hourly/himawari_mariveles_hourly.csv"
+      ],
+      "weather_csvs": [
+        "open_meteo_clean.csv"
+      ],
+      "provenance": {
+        "satellite": "Himawari-9 AHI; existing Satpy extraction, fixed 20x20 pixel crop; spatial registration not independently validated",
+        "weather": "Open-Meteo historical gridded export; exact model and issue-time availability not recorded",
+        "naive_timezone": "UTC (raw weather export GMT, offset 0; AHI filename timestamps interpreted as UTC)",
+        "operational_availability": "unverified; retrospective timestamps are valid times, not publication times"
+      }
+    },
+    "evaluation": {
+      "final_test_previously_inspected": true,
+      "prospective": false,
+      "uncertainty_calibrated": false
+    }
+  },
+  "splits": {
+    "train": {
+      "samples": 170,
+      "target_start_utc": "2024-08-01T06:00:00+00:00",
+      "target_end_utc": "2024-08-08T21:00:00+00:00",
+      "first_origin_utc": "2024-08-01T05:00:00+00:00",
+      "input_start_utc": "2024-08-01T00:00:00+00:00"
+    },
+    "validation": {
+      "samples": 36,
+      "target_start_utc": "2024-08-08T22:00:00+00:00",
+      "target_end_utc": "2024-08-10T09:00:00+00:00",
+      "first_origin_utc": "2024-08-08T21:00:00+00:00",
+      "input_start_utc": "2024-08-08T16:00:00+00:00"
+    },
+    "test": {
+      "samples": 38,
+      "target_start_utc": "2024-08-10T10:00:00+00:00",
+      "target_end_utc": "2024-08-11T23:00:00+00:00",
+      "first_origin_utc": "2024-08-10T09:00:00+00:00",
+      "input_start_utc": "2024-08-10T04:00:00+00:00"
+    }
+  },
+  "dependency_versions": {
+    "torch": "2.13.0",
+    "ncps": "1.0.1",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.1",
+    "PyYAML": "6.0.3"
+  },
+  "seed": 42,
+  "experiment_kind": "smoke_test",
+  "created_at_utc": "2026-10-14T06:44:00.780105+00:00",
+  "promotion_eligible": false,
+  "hidden_state_policy": "reset to zero per input window",
+  "scaler_fit": "training-only flattened overlapping windows, population std",
+  "model": "cfc",
+  "architecture": "CanonicalCfC",
+  "scaling": {
+    "x_mean": [
+      27.042058823529448,
+      88.58431372549019,
+      24.96549019607847,
+      231.6339158978101,
+      269.0154283155106,
+      267.09132110717115,
+      263.71582885859783
+    ],
+    "x_scale": [
+      1.396215359417425,
+      5.071426010889758,
+      0.5890547886415445,
+      6.590590198549061,
+      20.400091974681384,
+      20.516108885179182,
+      19.748061998351403
+    ],
+    "y_mean": 30.106402377221137,
+    "y_scale": 3.392040642479762
+  },
+  "training_result": {
+    "best_epoch": 6,
+    "epochs_executed": 8,
+    "best_validation_mse_scaled": 0.12408111989498138,
+    "duration_seconds": 0.3443269000017608,
+    "parameter_count": 877,
+    "device": "cpu"
+  },
+  "artifact_format": "thermocast-phase4-v1",
+  "model_version": "dcb89a029b9e0bec636c7ec76a240e2c7682b1dfceddd985947f3520216e5f4b"
+}

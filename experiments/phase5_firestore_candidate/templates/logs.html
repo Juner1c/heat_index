@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ThermoCast - Stored Data Logs</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            body { font-family: 'Inter', 'Segoe UI', sans-serif; background: linear-gradient(180deg, #bde0fe 0%, #e8f4f8 100%); color: #1e293b; padding: 0; margin: 0; min-height: 100vh; }
+            .navbar { background: #1e293b; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+            .navbar-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25em; color: #fff; }
+            .navbar-brand .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #f59e0b, #ef4444); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff; font-weight: 900; }
+            .nav-links { display: flex; gap: 8px; }
+            .nav-link { color: #cbd5e1; padding: 8px 18px; border-radius: 24px; text-decoration: none; font-size: 0.85em; font-weight: 500; transition: all 0.25s; }
+            .nav-link:hover { background: #334155; color: #fff; }
+            .nav-link.active-link { background: #f59e0b; color: #1e293b; font-weight: 700; }
+            .container { max-width: 1100px; margin: auto; padding: 32px 28px; }
+            h1 { color: #1e293b; margin-bottom: 5px; font-size: 1.5em; }
+            p { color: #6b7280; font-size: 0.9em; margin-bottom: 20px; }
+            a { color: #2563eb; text-decoration: none; font-weight: 600; }
+            a:hover { text-decoration: underline; }
+            table { width: 100%; border-collapse: collapse; margin-top: 8px; background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+            th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.88em; }
+            th { background: #1e293b; color: white; text-transform: uppercase; font-size: 0.72em; letter-spacing: 1px; font-weight: 600; }
+            tr:hover { background: rgba(59,130,246,0.06); }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <div class="logo-icon">TC</div>
+                <span>Thermo<span style="font-weight:400; color:#f59e0b;">Cast</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/logs" class="nav-link active-link">Data Logs</a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Stored Sensor Data Logs</h1>
+            <p><a href="/">&larr; Back to Live Dashboard</a> &nbsp;|&nbsp; Displaying last 100 records from the selected storage provider</p>
+            <p>Legacy timestamps have unverified timezones. Receipt times are not measurement times. Legacy advisory classification has known boundary defects and is not validated for safety alerts.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Timestamp</th>
+                        <th>Temp (&deg;C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Heat Index (&deg;C)</th>
+                        <th>Experimental forecast — unvalidated (&deg;C)</th>
+                        <th>PAGASA Advisory</th>
+                    </tr>
+                </thead>
+                <tbody>
+    {% for row in readings %}<tr><td>{{ row.id }}</td><td>{{ row.timestamp or 'Measurement time unknown' }}{% if row.received_at_utc %}<br>Received: {{ row.received_at_utc }}{% endif %}</td><td>{{ row.temperature_c }}</td><td>{{ row.humidity_pct }}</td><td>{{ row.heat_index_c }}</td><td>{{ row.forecast_3hr_c if row.forecast_3hr_c is not none else 'Unavailable' }}</td><td>{{ row.pagasa_advisory }}</td></tr>{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>

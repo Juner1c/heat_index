@@ -1,0 +1,36 @@
+# Fixed before the smoke experiment. No test-driven hyperparameter search.
+sequence_length: 6
+forecast_horizon_hours: 1
+models: [mlp, ltc, cfc]
+hidden_size: 12
+ode_unfolds: 6
+epochs: 8
+patience: 3
+min_delta: 0.0001
+learning_rate: 0.003
+batch_size: 32
+gradient_clip: 1.0
+seed: 42
+device: cpu
+threads: 1
+split:
+  train_fraction: 0.70
+  validation_fraction: 0.15
+# Screening policy, not proof of statistical sufficiency.
+minimum:
+  train_samples: 500
+  validation_samples: 168
+  test_samples: 168
+  coverage_days: 30
+data:
+  satellite_csvs: [mariveles_hourly/himawari_mariveles_hourly.csv]
+  weather_csvs: [open_meteo_clean.csv]
+  provenance:
+    satellite: Himawari-9 AHI; existing Satpy extraction, fixed 20x20 pixel crop; spatial registration not independently validated
+    weather: Open-Meteo historical gridded export; exact model and issue-time availability not recorded
+    naive_timezone: UTC (raw weather export GMT, offset 0; AHI filename timestamps interpreted as UTC)
+    operational_availability: unverified; retrospective timestamps are valid times, not publication times
+evaluation:
+  final_test_previously_inspected: true
+  prospective: false
+  uncertainty_calibrated: false

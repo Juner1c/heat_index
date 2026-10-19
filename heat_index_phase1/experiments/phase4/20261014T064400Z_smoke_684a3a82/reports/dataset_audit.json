@@ -1,0 +1,580 @@
+{
+  "datasets": [
+    {
+      "source": "himawari_mariveles_hourly.csv",
+      "sha256": "53f84ad11e27f831aa8ccd427b7532cc1d2ede0a588b934526fe1d41d10c5396",
+      "rows": 262,
+      "start_utc": "2024-08-01T00:00:00+00:00",
+      "end_utc": "2024-08-11T23:00:00+00:00",
+      "unique_timestamps": 262,
+      "unique_hourly_timestamps": 262,
+      "invalid_timestamps": 0,
+      "non_hourly_timestamps": 0,
+      "duplicate_timestamps": 0,
+      "expected_hours": 264,
+      "missing_hours": 2,
+      "missing_timestamps_utc": [
+        "2024-08-01T12:00:00+00:00",
+        "2024-08-02T00:00:00+00:00"
+      ],
+      "coverage_percent": 99.24242424242425,
+      "missing_cells": {
+        "timestamp": 0,
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0
+      },
+      "nonfinite_numeric_cells": {
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0
+      },
+      "numeric_ranges": {
+        "B08_mean_K": {
+          "min": 208.39350003638808,
+          "max": 242.2128529404971
+        },
+        "B08_min_K": {
+          "min": 195.16392917598293,
+          "max": 239.6405156540509
+        },
+        "B08_max_K": {
+          "min": 214.33733449430107,
+          "max": 244.64334690972916
+        },
+        "B13_mean_K": {
+          "min": 209.874711763263,
+          "max": 294.79680947009786
+        },
+        "B13_min_K": {
+          "min": 195.3974230755508,
+          "max": 291.52947025153185
+        },
+        "B13_max_K": {
+          "min": 216.97771279960148,
+          "max": 298.3405370759011
+        },
+        "B14_mean_K": {
+          "min": 209.03258852154693,
+          "max": 293.46025949567684
+        },
+        "B14_min_K": {
+          "min": 195.40810054130955,
+          "max": 290.6661760598082
+        },
+        "B14_max_K": {
+          "min": 216.23105570324716,
+          "max": 296.22019189265694
+        },
+        "B15_mean_K": {
+          "min": 208.03949410110823,
+          "max": 289.1403632572561
+        },
+        "B15_min_K": {
+          "min": 194.68591352202327,
+          "max": 287.2154303484031
+        },
+        "B15_max_K": {
+          "min": 215.5035901546036,
+          "max": 291.09143712109073
+        }
+      }
+    },
+    {
+      "source": "open_meteo_clean.csv",
+      "sha256": "c64411f79654f342df620b6d95ec05c47cc4c46b26c7f5e6c49fd70981dbc06f",
+      "rows": 49680,
+      "start_utc": "2021-01-01T00:00:00+00:00",
+      "end_utc": "2026-09-01T23:00:00+00:00",
+      "unique_timestamps": 49680,
+      "unique_hourly_timestamps": 49680,
+      "invalid_timestamps": 0,
+      "non_hourly_timestamps": 0,
+      "duplicate_timestamps": 0,
+      "expected_hours": 49680,
+      "missing_hours": 0,
+      "missing_timestamps_utc": [],
+      "coverage_percent": 100.0,
+      "missing_cells": {
+        "time": 0,
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0
+      },
+      "nonfinite_numeric_cells": {
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0
+      },
+      "numeric_ranges": {
+        "temperature_C": {
+          "min": 21.7,
+          "max": 37.0
+        },
+        "humidity_percent": {
+          "min": 22.0,
+          "max": 100.0
+        },
+        "dew_point_C": {
+          "min": 9.9,
+          "max": 28.1
+        },
+        "apparent_temperature_C": {
+          "min": 19.9,
+          "max": 42.2
+        }
+      }
+    }
+  ],
+  "manifest": {
+    "dataset_fingerprint": "e8092a7f480b9c7f92e715dd9e421d5b0b820651a813c91cc350ef55de2859ef",
+    "sources": [
+      {
+        "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\mariveles_hourly\\himawari_mariveles_hourly.csv",
+        "sha256": "53f84ad11e27f831aa8ccd427b7532cc1d2ede0a588b934526fe1d41d10c5396"
+      },
+      {
+        "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\open_meteo_clean.csv",
+        "sha256": "c64411f79654f342df620b6d95ec05c47cc4c46b26c7f5e6c49fd70981dbc06f"
+      }
+    ],
+    "provenance": {
+      "satellite": "Himawari-9 AHI; existing Satpy extraction, fixed 20x20 pixel crop; spatial registration not independently validated",
+      "weather": "Open-Meteo historical gridded export; exact model and issue-time availability not recorded",
+      "naive_timezone": "UTC (raw weather export GMT, offset 0; AHI filename timestamps interpreted as UTC)",
+      "operational_availability": "unverified; retrospective timestamps are valid times, not publication times"
+    },
+    "timezone": "UTC",
+    "units": {
+      "B08_mean_K": "K",
+      "B13_mean_K": "K",
+      "B14_mean_K": "K",
+      "B15_mean_K": "K",
+      "temperature_C": "\u00b0C",
+      "dew_point_C": "\u00b0C",
+      "humidity_percent": "%",
+      "heat_index_C": "\u00b0C",
+      "target_heat_index_1h_C": "\u00b0C"
+    },
+    "satellite_rows": 262,
+    "weather_rows": 49680,
+    "aligned_rows": 262,
+    "satellite_without_weather_timestamp": 0,
+    "invalid_feature_rows": 0,
+    "valid_one_hour_targets": 259,
+    "interpolation": "none",
+    "operational_availability_verified": false
+  },
+  "valid_single_observation_samples": 259,
+  "valid_sequence_samples": 244,
+  "rejected_sequence_origins": {
+    "insufficient_context": 5,
+    "gapped_window": 10,
+    "invalid_features": 0,
+    "missing_target": 3
+  },
+  "splits": {
+    "train": {
+      "samples": 170,
+      "target_start_utc": "2024-08-01T06:00:00+00:00",
+      "target_end_utc": "2024-08-08T21:00:00+00:00",
+      "first_origin_utc": "2024-08-01T05:00:00+00:00",
+      "input_start_utc": "2024-08-01T00:00:00+00:00"
+    },
+    "validation": {
+      "samples": 36,
+      "target_start_utc": "2024-08-08T22:00:00+00:00",
+      "target_end_utc": "2024-08-10T09:00:00+00:00",
+      "first_origin_utc": "2024-08-08T21:00:00+00:00",
+      "input_start_utc": "2024-08-08T16:00:00+00:00"
+    },
+    "test": {
+      "samples": 38,
+      "target_start_utc": "2024-08-10T10:00:00+00:00",
+      "target_end_utc": "2024-08-11T23:00:00+00:00",
+      "first_origin_utc": "2024-08-10T09:00:00+00:00",
+      "input_start_utc": "2024-08-10T04:00:00+00:00"
+    }
+  },
+  "sufficiency": {
+    "screening_passed": false,
+    "coverage_days": 10.958333333333334,
+    "reasons": [
+      "train has 170 samples; screening minimum is 500",
+      "validation has 36 samples; screening minimum is 168",
+      "test has 38 samples; screening minimum is 168",
+      "Coverage is 10.96 days; screening minimum is 30"
+    ],
+    "note": "Minimums are configurable research screening policy, not guarantees of statistical validity."
+  },
+  "archived_sources": [
+    {
+      "source": "merged_weather_dataset.csv",
+      "sha256": "6c4364214babe4544f140b91b98aa3272a195dd32083a216a8084e11533fe3fa",
+      "rows": 262,
+      "start_utc": "2024-08-01T00:00:00+00:00",
+      "end_utc": "2024-08-11T23:00:00+00:00",
+      "unique_timestamps": 262,
+      "unique_hourly_timestamps": 262,
+      "invalid_timestamps": 0,
+      "non_hourly_timestamps": 0,
+      "duplicate_timestamps": 0,
+      "expected_hours": 264,
+      "missing_hours": 2,
+      "missing_timestamps_utc": [
+        "2024-08-01T12:00:00+00:00",
+        "2024-08-02T00:00:00+00:00"
+      ],
+      "coverage_percent": 99.24242424242425,
+      "missing_cells": {
+        "timestamp": 0,
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0,
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0
+      },
+      "nonfinite_numeric_cells": {
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0,
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0
+      },
+      "numeric_ranges": {
+        "B08_mean_K": {
+          "min": 208.39350003638808,
+          "max": 242.2128529404971
+        },
+        "B08_min_K": {
+          "min": 195.16392917598293,
+          "max": 239.6405156540509
+        },
+        "B08_max_K": {
+          "min": 214.33733449430107,
+          "max": 244.6433469097292
+        },
+        "B13_mean_K": {
+          "min": 209.874711763263,
+          "max": 294.79680947009786
+        },
+        "B13_min_K": {
+          "min": 195.3974230755508,
+          "max": 291.52947025153185
+        },
+        "B13_max_K": {
+          "min": 216.97771279960148,
+          "max": 298.3405370759011
+        },
+        "B14_mean_K": {
+          "min": 209.03258852154693,
+          "max": 293.46025949567684
+        },
+        "B14_min_K": {
+          "min": 195.40810054130955,
+          "max": 290.6661760598082
+        },
+        "B14_max_K": {
+          "min": 216.2310557032472,
+          "max": 296.22019189265694
+        },
+        "B15_mean_K": {
+          "min": 208.03949410110823,
+          "max": 289.1403632572561
+        },
+        "B15_min_K": {
+          "min": 194.68591352202327,
+          "max": 287.2154303484031
+        },
+        "B15_max_K": {
+          "min": 215.5035901546036,
+          "max": 291.09143712109073
+        },
+        "temperature_C": {
+          "min": 25.0,
+          "max": 30.8
+        },
+        "humidity_percent": {
+          "min": 73.0,
+          "max": 98.0
+        },
+        "dew_point_C": {
+          "min": 23.5,
+          "max": 26.8
+        },
+        "apparent_temperature_C": {
+          "min": 29.2,
+          "max": 38.3
+        }
+      }
+    },
+    {
+      "source": "heat_index_dataset.csv",
+      "sha256": "f744929bd35d599e0bf4ac062603876163b054c6324a500655d2a58766d16c8d",
+      "rows": 262,
+      "start_utc": "2024-08-01T00:00:00+00:00",
+      "end_utc": "2024-08-11T23:00:00+00:00",
+      "unique_timestamps": 262,
+      "unique_hourly_timestamps": 262,
+      "invalid_timestamps": 0,
+      "non_hourly_timestamps": 0,
+      "duplicate_timestamps": 0,
+      "expected_hours": 264,
+      "missing_hours": 2,
+      "missing_timestamps_utc": [
+        "2024-08-01T12:00:00+00:00",
+        "2024-08-02T00:00:00+00:00"
+      ],
+      "coverage_percent": 99.24242424242425,
+      "missing_cells": {
+        "timestamp": 0,
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0,
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0,
+        "heat_index_C": 0,
+        "target_heat_index_1h_C": 3
+      },
+      "nonfinite_numeric_cells": {
+        "B08_mean_K": 0,
+        "B08_min_K": 0,
+        "B08_max_K": 0,
+        "B13_mean_K": 0,
+        "B13_min_K": 0,
+        "B13_max_K": 0,
+        "B14_mean_K": 0,
+        "B14_min_K": 0,
+        "B14_max_K": 0,
+        "B15_mean_K": 0,
+        "B15_min_K": 0,
+        "B15_max_K": 0,
+        "temperature_C": 0,
+        "humidity_percent": 0,
+        "dew_point_C": 0,
+        "apparent_temperature_C": 0,
+        "heat_index_C": 0,
+        "target_heat_index_1h_C": 3
+      },
+      "numeric_ranges": {
+        "B08_mean_K": {
+          "min": 208.39350003638808,
+          "max": 242.2128529404971
+        },
+        "B08_min_K": {
+          "min": 195.16392917598293,
+          "max": 239.6405156540509
+        },
+        "B08_max_K": {
+          "min": 214.33733449430107,
+          "max": 244.6433469097292
+        },
+        "B13_mean_K": {
+          "min": 209.874711763263,
+          "max": 294.79680947009786
+        },
+        "B13_min_K": {
+          "min": 195.3974230755508,
+          "max": 291.52947025153185
+        },
+        "B13_max_K": {
+          "min": 216.97771279960148,
+          "max": 298.3405370759011
+        },
+        "B14_mean_K": {
+          "min": 209.03258852154693,
+          "max": 293.46025949567684
+        },
+        "B14_min_K": {
+          "min": 195.40810054130955,
+          "max": 290.6661760598082
+        },
+        "B14_max_K": {
+          "min": 216.2310557032472,
+          "max": 296.22019189265694
+        },
+        "B15_mean_K": {
+          "min": 208.03949410110823,
+          "max": 289.1403632572561
+        },
+        "B15_min_K": {
+          "min": 194.68591352202327,
+          "max": 287.2154303484031
+        },
+        "B15_max_K": {
+          "min": 215.5035901546036,
+          "max": 291.09143712109073
+        },
+        "temperature_C": {
+          "min": 25.0,
+          "max": 30.8
+        },
+        "humidity_percent": {
+          "min": 73.0,
+          "max": 98.0
+        },
+        "dew_point_C": {
+          "min": 23.5,
+          "max": 26.8
+        },
+        "apparent_temperature_C": {
+          "min": 29.2,
+          "max": 38.3
+        },
+        "heat_index_C": {
+          "min": 25.54416666666667,
+          "max": 38.538234911111054
+        },
+        "target_heat_index_1h_C": {
+          "min": 25.54416666666667,
+          "max": 38.538234911111054
+        }
+      }
+    }
+  ],
+  "archived_reconstruction_checks": {
+    "merged_weather_dataset.csv": {
+      "overlap_rows": 262,
+      "columns": {
+        "temperature_C": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "humidity_percent": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "dew_point_C": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "B08_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 5.684341886080802e-14,
+          "missingness_matches": true
+        },
+        "B13_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 5.684341886080802e-14,
+          "missingness_matches": true
+        },
+        "B14_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 5.684341886080802e-14,
+          "missingness_matches": true
+        },
+        "B15_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 2.842170943040401e-14,
+          "missingness_matches": true
+        }
+      }
+    },
+    "heat_index_dataset.csv": {
+      "overlap_rows": 262,
+      "columns": {
+        "temperature_C": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "humidity_percent": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "dew_point_C": {
+          "compared": 262,
+          "max_abs_difference": 0.0,
+          "missingness_matches": true
+        },
+        "B08_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 8.526512829121202e-14,
+          "missingness_matches": true
+        },
+        "B13_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 5.684341886080802e-14,
+          "missingness_matches": true
+        },
+        "B14_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 8.526512829121202e-14,
+          "missingness_matches": true
+        },
+        "B15_mean_K": {
+          "compared": 262,
+          "max_abs_difference": 8.526512829121202e-14,
+          "missingness_matches": true
+        },
+        "heat_index_C": {
+          "compared": 262,
+          "max_abs_difference": 7.105427357601002e-15,
+          "missingness_matches": true
+        },
+        "target_heat_index_1h_C": {
+          "compared": 259,
+          "max_abs_difference": 7.105427357601002e-15,
+          "missingness_matches": true
+        }
+      }
+    }
+  }
+}

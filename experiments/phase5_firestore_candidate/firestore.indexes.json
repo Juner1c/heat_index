@@ -1,0 +1,13 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "sensor_readings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "source_lineage_id", "order": "ASCENDING"},
+        {"fieldPath": "source_record_id", "order": "DESCENDING"}
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

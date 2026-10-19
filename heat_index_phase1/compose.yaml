@@ -1,0 +1,35 @@
+services:
+  api:
+    build: .
+    environment:
+      WEATHER_CSV: /data/${WEATHER_CSV_FILE:-himawari_mariveles_hourly.csv}
+      LNN_MODEL_PATH: /artifacts/${LNN_ARTIFACT_DIR:-mariveles_lnn}
+      COLLECTION_START: ${COLLECTION_START:-}
+      COLLECTION_END: ${COLLECTION_END:-}
+      IOT_RENDER_BASE_URL: ${IOT_RENDER_BASE_URL:-https://thermocast-ai-2.onrender.com}
+      IOT_CONNECT_TIMEOUT_SECONDS: ${IOT_CONNECT_TIMEOUT_SECONDS:-3}
+      IOT_READ_TIMEOUT_SECONDS: ${IOT_READ_TIMEOUT_SECONDS:-8}
+      IOT_CACHE_SECONDS: ${IOT_CACHE_SECONDS:-5}
+      IOT_FRESHNESS_SECONDS: ${IOT_FRESHNESS_SECONDS:-120}
+      CORS_ORIGINS: http://localhost:8501
+    ports:
+      - "8000:8000"
+    volumes:
+      - ${DATA_DIR:-../Himawari9_Development/mariveles_hourly}:/data:ro
+      - ${ARTIFACTS_DIR:-./artifacts}:/artifacts:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  dashboard:
+    build: .
+    command: ["python", "-m", "streamlit", "run", "dashboard/historical.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy

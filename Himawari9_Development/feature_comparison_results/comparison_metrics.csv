@@ -1,0 +1,4 @@
+Model,Features,Training_rows,Test_rows,MAE_C,RMSE_C
+Persistence baseline,Current heat index only,207,52,0.9066611993897659,1.2957389555004877
+Weather only,"temperature_C, humidity_percent, dew_point_C",207,52,1.1370398987279313,1.3675839675916472
+Weather + satellite,"temperature_C, humidity_percent, dew_point_C, B08_mean_K, B13_mean_K, B14_mean_K, B15_mean_K",207,52,1.1039445247240909,1.3555027957364734

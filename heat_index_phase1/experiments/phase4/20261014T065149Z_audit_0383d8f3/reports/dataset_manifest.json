@@ -1,0 +1,39 @@
+{
+  "dataset_fingerprint": "e8092a7f480b9c7f92e715dd9e421d5b0b820651a813c91cc350ef55de2859ef",
+  "sources": [
+    {
+      "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\mariveles_hourly\\himawari_mariveles_hourly.csv",
+      "sha256": "53f84ad11e27f831aa8ccd427b7532cc1d2ede0a588b934526fe1d41d10c5396"
+    },
+    {
+      "path": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\ThermoCast\\Himawari9_Development\\open_meteo_clean.csv",
+      "sha256": "c64411f79654f342df620b6d95ec05c47cc4c46b26c7f5e6c49fd70981dbc06f"
+    }
+  ],
+  "provenance": {
+    "satellite": "Himawari-9 AHI; existing Satpy extraction, fixed 20x20 pixel crop; spatial registration not independently validated",
+    "weather": "Open-Meteo historical gridded export; exact model and issue-time availability not recorded",
+    "naive_timezone": "UTC (raw weather export GMT, offset 0; AHI filename timestamps interpreted as UTC)",
+    "operational_availability": "unverified; retrospective timestamps are valid times, not publication times"
+  },
+  "timezone": "UTC",
+  "units": {
+    "B08_mean_K": "K",
+    "B13_mean_K": "K",
+    "B14_mean_K": "K",
+    "B15_mean_K": "K",
+    "temperature_C": "\u00b0C",
+    "dew_point_C": "\u00b0C",
+    "humidity_percent": "%",
+    "heat_index_C": "\u00b0C",
+    "target_heat_index_1h_C": "\u00b0C"
+  },
+  "satellite_rows": 262,
+  "weather_rows": 49680,
+  "aligned_rows": 262,
+  "satellite_without_weather_timestamp": 0,
+  "invalid_feature_rows": 0,
+  "valid_one_hour_targets": 259,
+  "interpolation": "none",
+  "operational_availability_verified": false
+}

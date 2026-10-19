@@ -1,0 +1,176 @@
+{
+  "run_id": "20261014T064400Z_smoke_684a3a82",
+  "status": "completed",
+  "experiment_kind": "smoke_test",
+  "promotion_eligible": false,
+  "valid_samples": 244,
+  "sequence_length": 6,
+  "dataset_fingerprint": "e8092a7f480b9c7f92e715dd9e421d5b0b820651a813c91cc350ef55de2859ef",
+  "splits": {
+    "train": {
+      "samples": 170,
+      "target_start_utc": "2024-08-01T06:00:00+00:00",
+      "target_end_utc": "2024-08-08T21:00:00+00:00",
+      "first_origin_utc": "2024-08-01T05:00:00+00:00",
+      "input_start_utc": "2024-08-01T00:00:00+00:00"
+    },
+    "validation": {
+      "samples": 36,
+      "target_start_utc": "2024-08-08T22:00:00+00:00",
+      "target_end_utc": "2024-08-10T09:00:00+00:00",
+      "first_origin_utc": "2024-08-08T21:00:00+00:00",
+      "input_start_utc": "2024-08-08T16:00:00+00:00"
+    },
+    "test": {
+      "samples": 38,
+      "target_start_utc": "2024-08-10T10:00:00+00:00",
+      "target_end_utc": "2024-08-11T23:00:00+00:00",
+      "first_origin_utc": "2024-08-10T09:00:00+00:00",
+      "input_start_utc": "2024-08-10T04:00:00+00:00"
+    }
+  },
+  "sufficiency": {
+    "screening_passed": false,
+    "coverage_days": 10.958333333333334,
+    "reasons": [
+      "train has 170 samples; screening minimum is 500",
+      "validation has 36 samples; screening minimum is 168",
+      "test has 38 samples; screening minimum is 168",
+      "Coverage is 10.96 days; screening minimum is 30"
+    ],
+    "note": "Minimums are configurable research screening policy, not guarantees of statistical validity."
+  },
+  "training": {
+    "mlp": {
+      "best_epoch": 8,
+      "epochs_executed": 8,
+      "best_validation_mse_scaled": 0.17945581674575806,
+      "duration_seconds": 0.12740330000087852,
+      "parameter_count": 529,
+      "device": "cpu",
+      "model_version": "fa7eed118de6d98eca21f75ede5ec27c9a565c60f7b9d697ebd813c580fe2a51",
+      "reload_verified": true
+    },
+    "ltc": {
+      "best_epoch": 8,
+      "epochs_executed": 8,
+      "best_validation_mse_scaled": 0.46147987246513367,
+      "duration_seconds": 1.1715074999992794,
+      "parameter_count": 1227,
+      "device": "cpu",
+      "model_version": "825475ea213b7178d49eeffe4882d779a6bd12b83008ac40ec327e6706671003",
+      "reload_verified": true
+    },
+    "cfc": {
+      "best_epoch": 6,
+      "epochs_executed": 8,
+      "best_validation_mse_scaled": 0.12408111989498138,
+      "duration_seconds": 0.3443269000017608,
+      "parameter_count": 877,
+      "device": "cpu",
+      "model_version": "dcb89a029b9e0bec636c7ec76a240e2c7682b1dfceddd985947f3520216e5f4b",
+      "reload_verified": true
+    }
+  },
+  "historical_references": {
+    "single_time_constant": {
+      "status": "historical_reference_only",
+      "checkpoint_version": "5651ea14a42283854a4f40930a0ebe9c7feb573829984b8ae1762eaf356e0c83",
+      "note": "Original training/split differs; not a controlled architecture comparison."
+    },
+    "sequence_time_constant": {
+      "status": "historical_reference_only",
+      "checkpoint_version": "195c526299a885c40dffcbd105e257781d69bf0e27c3259e67ea51ea67af12ba",
+      "note": "Original training/split differs; not a controlled architecture comparison."
+    }
+  },
+  "comparison": [
+    {
+      "model": "persistence",
+      "protocol": "phase4_smoke",
+      "samples": 38,
+      "mae_c": 0.8535499073766164,
+      "rmse_c": 1.2847389277842236,
+      "mean_bias_c": -0.09773867951110594,
+      "r2": 0.8342831859289574,
+      "residual_p05_c": -1.775192050742012,
+      "residual_median_c": 0.10500000000000043,
+      "residual_p95_c": 1.2793730668459755,
+      "max_abs_error_c": 4.884927453040028,
+      "mae_skill_vs_persistence": 0.0
+    },
+    {
+      "model": "mlp",
+      "protocol": "phase4_smoke",
+      "samples": 38,
+      "mae_c": 1.1559041767401304,
+      "rmse_c": 1.3984234426719195,
+      "mean_bias_c": -0.5113900772291452,
+      "r2": 0.8036575527905023,
+      "residual_p05_c": -2.3059223836249374,
+      "residual_median_c": -0.6714447899287013,
+      "residual_p95_c": 1.4742675986704135,
+      "max_abs_error_c": 3.197075582757641,
+      "mae_skill_vs_persistence": -0.35423150626634015
+    },
+    {
+      "model": "ltc",
+      "protocol": "phase4_smoke",
+      "samples": 38,
+      "mae_c": 1.968770880072414,
+      "rmse_c": 2.4259821678024567,
+      "mean_bias_c": -0.5970973848834804,
+      "r2": 0.4091026846563932,
+      "residual_p05_c": -4.859084294321382,
+      "residual_median_c": -0.1863776648342821,
+      "residual_p95_c": 2.2075734098526114,
+      "max_abs_error_c": 5.800811872021939,
+      "mae_skill_vs_persistence": -1.3065679734222297
+    },
+    {
+      "model": "cfc",
+      "protocol": "phase4_smoke",
+      "samples": 38,
+      "mae_c": 1.206652307980405,
+      "rmse_c": 1.5140092209325287,
+      "mean_bias_c": 0.2976424128390081,
+      "r2": 0.7698590779633246,
+      "residual_p05_c": -2.2459646091773093,
+      "residual_median_c": 0.6068232281868511,
+      "residual_p95_c": 2.192861388902162,
+      "max_abs_error_c": 4.276962020948929,
+      "mae_skill_vs_persistence": -0.4136868829252738
+    },
+    {
+      "model": "single_time_constant",
+      "protocol": "original_historical_reference",
+      "samples": 38,
+      "mae_c": 1.116373378914536,
+      "rmse_c": 1.426542195141966,
+      "mean_bias_c": 0.26247613898995814,
+      "r2": 0.7956822711911655,
+      "residual_p05_c": -2.5326706910731747,
+      "residual_median_c": 0.5465683270035537,
+      "residual_p95_c": 1.6124262045516211,
+      "max_abs_error_c": 4.277946633578942,
+      "mae_skill_vs_persistence": -0.3079181067990586
+    },
+    {
+      "model": "sequence_time_constant",
+      "protocol": "original_historical_reference",
+      "samples": 38,
+      "mae_c": 1.2544613305235233,
+      "rmse_c": 1.7203113604460976,
+      "mean_bias_c": 0.31250012138934646,
+      "r2": 0.7028669759843738,
+      "residual_p05_c": -2.3697101138408447,
+      "residual_median_c": 0.12987983876808507,
+      "residual_p95_c": 3.3576780586242614,
+      "max_abs_error_c": 3.475382156372067,
+      "mae_skill_vs_persistence": -0.46969886550524875
+    }
+  ],
+  "test_previously_inspected": true,
+  "prospectively_validated": false,
+  "deployed_model_changed": false
+}

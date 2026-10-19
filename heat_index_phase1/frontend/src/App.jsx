@@ -1,0 +1,15 @@
+import React, { useState } from "react";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { Activity, LayoutDashboard, Database, CloudSun, Thermometer, BrainCircuit, ShieldCheck, MapPin, RefreshCw, Menu, X, Satellite } from "lucide-react";
+import { RefreshContext } from "./hooks/useData";
+import { Overview, Historical, Weather, Quality } from "./pages/ConnectedDashboard";
+import Forecasting from "./pages/Forecasting";
+
+const navigation = [["/", "Overview", LayoutDashboard], ["/historical", "Historical Data", Database], ["/weather", "Weather Monitoring", CloudSun], ["/heat-index", "Heat Index Analysis", Thermometer], ["/forecasting", "AI Forecasting", BrainCircuit], ["/quality", "Data Quality", ShieldCheck]];
+export default function App() {
+  const [revision, setRevision] = useState(0); const [menuOpen, setMenuOpen] = useState(false); const location = useLocation();
+  const title = navigation.find(([url]) => url === location.pathname)?.[1] || "Page not found";
+  return <RefreshContext.Provider value={revision}><div className="app-shell">{menuOpen && <button className="sidebar-backdrop" aria-label="Close navigation" onClick={() => setMenuOpen(false)}/>}
+    <aside className={`sidebar ${menuOpen ? "open" : ""}`}><a href="/" className="brand"><span className="brand-icon"><Activity size={25}/></span><span>Thermo<span>Cast</span><small>ENVIRONMENTAL INTELLIGENCE</small></span></a><button className="mobile-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}><X/></button><span className="nav-heading">WORKSPACE</span><nav>{navigation.map(([url, label, Icon]) => <NavLink key={url} to={url} end onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? "active" : ""}><Icon size={19}/>{label}{url === "/forecasting" && <small>BETA</small>}</NavLink>)}</nav><div className="sidebar-bottom"><Satellite size={25}/><strong>Observations that matter.</strong><p>Himawari-9 satellite analytics<br/>for a heat-resilient community.</p><span>CAPSTONE RESEARCH · PHASE 2</span></div></aside>
+    <div className="workspace"><header className="topbar"><button className="menu-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu/></button><div><span className="breadcrumb">Workspace / {title}</span><h2>{title}</h2></div><div className="top-actions"><span className="location"><MapPin size={15}/>Mariveles, Bataan</span><button className="button secondary" onClick={() => setRevision((value) => value + 1)}><RefreshCw size={15}/>Refresh data</button><span className="avatar">TC</span></div></header><main><Routes><Route path="/" element={<Overview/>}/><Route path="/historical" element={<Historical/>}/><Route path="/weather" element={<Weather/>}/><Route path="/heat-index" element={<Weather heatIndex/>}/><Route path="/forecasting" element={<Forecasting/>}/><Route path="/quality" element={<Quality/>}/><Route path="*" element={<div className="empty">Page not found. Select a workspace page from the navigation.</div>}/></Routes><footer>ThermoCast · Himawari-9 Research Platform<span>Historical observations · UTC</span></footer></main></div></div></RefreshContext.Provider>;
+}

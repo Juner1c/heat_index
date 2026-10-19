@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv-*/
+node_modules/
+.runtime/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+*service-account*.json
+*adminsdk*.json
+*.pem
+*.key
+Himawari9_Development/downloads/

@@ -1,0 +1,30 @@
+{
+  "source_directory": "C:\\Users\\Jhonric Gorillo\\Desktop\\JHONRIC_FILES\\CAPSTONE\\Heat_Index",
+  "source_authority": "Project owner confirmed this directory as the source used for the Render-deployed IoT service. Deployed binary identity has not independently been verified.",
+  "originals_rechecked_unchanged": true,
+  "files_referenced": [
+    {
+      "source": "app.py",
+      "original_sha256": "e013737120e0bf81d252e5b1f20156a467270335a845db93b6e3283632409a68",
+      "reference_copy": "provenance/original_app.py.txt",
+      "reference_copy_sha256": "0405023b3cc2b9cae1f1c6c31a9ab8a3aa0ecb66237262ff31c330c9ac454ed5",
+      "normalization": "Reference copy adds a terminal newline; equality ignoring terminal newlines was verified. Not a byte-identical backup.",
+      "derived_files": ["legacy_logic.py", "templates/dashboard.html", "templates/logs.html", "application.py", "inference.py"]
+    },
+    {
+      "source": "requirements.txt",
+      "original_sha256": "b60e82b7460ec6d129e05fd0e9ca269b9f089999821d9b72f25b542a3744815f",
+      "reference_copy": "provenance/requirements.original.txt",
+      "reference_copy_sha256": "dc100d4f05bf787721e58db76d68264bb57086b0e7d60ef6f32ca843e451e193",
+      "normalization": "CRLF normalized to LF and a terminal newline added; normalized content equality was verified.",
+      "derived_files": ["requirements.txt"]
+    }
+  ],
+  "excluded_original_files_rechecked_by_hash_only": [
+    {"file": "thermocast.db", "sha256": "17184f0a692cc64a3bb4ef5b428d5832551408327af3561ae7de77b356401cf3", "copied": false},
+    {"file": "lnn_heat_index_model.pth", "sha256": "e599543474a336b33b943e45c6e79386664f52df510978a197c762bc63d1d0a3", "copied": false}
+  ],
+  "other_exclusions": ["service-account credentials", "private keys", "secret environment files", "ESP32 firmware", "production database contents", "research checkpoints and datasets"],
+  "production_operations_performed": [],
+  "note": "Hashes describe local originals, not a certified production backup or Render artifact. Generated artifacts contain synthetic records only. No original model was loaded."
+}

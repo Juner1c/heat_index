@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+*.db
+*.db-*
+*.sqlite*
+*.pth
+.env
+*service-account*.json
+*adminsdk*.json
+artifacts/
